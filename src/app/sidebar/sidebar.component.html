@@ -1,0 +1,33 @@
+<!-- <nav>
+  <ul>
+    <li>
+      <a routerLink="" [class.activated]="currentUrl == '/'">
+        <i class="material-icons">supervised_user_circle</i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="posts" [class.activated]="currentUrl == '/posts'">
+        <i class="material-icons">message</i>
+      </a>
+    </li>
+  </ul>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="col-md-4">
+      <a routerLink="" [class.activated]="currentUrl == '/'">
+        Home
+      </a>
+  </div>
+  <div class="col-md-4">
+    <a routerLink="posts" [class.activated]="currentUrl == '/posts'">
+      Attributes
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a routerLink="" [class.activated]="currentUrl == '/'" [ngClass]="isLast($last)">
+      About Us
+    </a>
+  </div>
+    
+  </nav>

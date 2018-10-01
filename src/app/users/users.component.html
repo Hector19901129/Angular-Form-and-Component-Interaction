@@ -1,0 +1,52 @@
+<!-- <h1>Users</h1>
+
+<ul>
+  <li *ngFor="let user of users$">
+     <a routerLink="/details/{{ user.id }}">{{ user.name }}</a>
+    
+     <ul>
+       <li>{{ user.email }}</li>
+       <li><a href="http://{{ user.website }}">{{user.website}}</a></li>
+     </ul>
+  </li>
+</ul> -->
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+      <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Client Info</label>
+            <input type="text" #code aria-describedby="emailHelp" placeholder="Enter Code" name="code">
+            <input type="text" #client aria-describedby="emailHelp" placeholder="Enter Client Name" name="client">  
+          </div>
+          <div class="input-group-prepend">
+              <label class="movement">Movement</label>
+              <div class="form-group" id="move">
+                  <input type="radio" name="movement" value="ticket" (change)="radioChangeHandler($event)" checked>
+                  <label>Ticket</label>
+                  <input type="radio" name="movement" value="exit" (change)="radioChangeHandler($event)">
+                  <label>Exit</label>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Reference</label>
+              <input type="date" #reference name='reference' id="reference">   
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+                <button type="button" class="btn btn-primary" (click)="ok(code.value, client.value, reference.value)">OK</button>
+                <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
+            </div>
+            <div class="col-sm-3">
+              
+            </div>
+            <div class="col-sm-3"></div>
+          </div>
+      </form>
+  </div>
+  <!-- <div class="col-md-3" id="status">
+      <span *ngIf="status">{{status}}</span>
+  </div> -->
+    
+</div>
