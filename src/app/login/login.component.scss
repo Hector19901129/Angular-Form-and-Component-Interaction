@@ -1,0 +1,43 @@
+
+
+form{
+    margin: 30px;
+    input{
+        margin: 10px;
+
+    }
+    #code{
+        width:20%;
+    }
+    #client{
+        width:60%;
+    }
+    .movement{
+        margin-right:5px;
+    }
+    #move{
+        border:1px solid gray;
+        width: 83%;
+    }
+    #exit{
+        margin-left: 30px;  
+    }
+    label{
+        margin-bottom: 0px;
+    }
+    #reference{
+        width:83%;
+        border-width: 1px;
+    }
+    button{
+        margin:20px;
+        width: 30%;
+    }
+}
+#status{
+    text-align: right;
+}
+.alert{
+    margin-left: 60px;
+    color: red;
+}
