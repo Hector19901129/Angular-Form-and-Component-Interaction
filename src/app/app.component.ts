@@ -10,7 +10,7 @@ import { SharedService } from './service/shared.service';
 
 export class AppComponent {
   status: string;
-  title = 'ng6-proj';
+  title = 'Anguar 6';
   constructor(private globals: Globals, private _sharedService: SharedService){
     this.status = globals.status;
     _sharedService.changeEmitted$.subscribe(

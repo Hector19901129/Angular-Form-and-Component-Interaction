@@ -1,54 +1,70 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { DataService } from '../data.service';
-import { Observable } from 'rxjs';
+import { Observable, fromEventPattern } from 'rxjs';
 import { Globals } from '../model/globals';
 import { SharedService } from '../service/shared.service';
+import { Data } from '@angular/router';
+import { forEach } from '@angular/router/src/utils/collection';
+import { Client } from '../client';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
-  // users$: Object; 
+  size: number;
+  error: string;
+  clients: Client[]; 
+  id: number;
   movement = "ticket";
-  //status: string;
-
+  model: any = {}; 
+  validClient: Client[]; 
   @Output() onChangedStatus = new EventEmitter<boolean>();
-
+  
   changeStatus(){
     this.onChangedStatus.emit();
   }
-
-  constructor(private globals: Globals, private _sharedService: SharedService) {
+  
+  constructor(private globals: Globals, private _sharedService: SharedService, private data: DataService) {
     //this.status = globals.status;
    }
   
   ngOnInit() {
-    //  this.data.getUsers().subscribe(
-    //    data => this.users$ = data
-    //  )
-    
+    this.error = "";
+    this.getClients();
+  }
+
+  getClients(): void{
+    this.data.getClients()
+    .subscribe(clients => this.clients = clients);
   }
   radioChangeHandler(event: any){
     this.movement = event.target.value;
   }
-  ok(code: string, client: string, reference: string): void {
-
-    code = code.trim();
-    client = client.trim();
-    reference = reference.trim(); 
-    if (!code || !reference) {
-      alert('code or reference is empty!'); 
-      return;
-    }
+  ok(): void {
+    //reference = reference.trim(); 
+    this.data.searchCode(this.model.code)
+    .subscribe(client => {
+      this.size = client.length;
+      this.validClient = client;
+      if(this.size == 0){
+        this.error = "Your Code is not valid. Retry!";
+        
+      }
+      else{
+        this.error = "";
+        this.model.client = client[0].name;
+        this.globals.status = "Client."+this.model.code+"-Client."+this.model.client+" | " + this.movement + " | " + this.model.reference;
+        this._sharedService.emitChange('data');
+      }
+    });
+    
+    
     // this.heroService.addHero({ name } as Hero)
     //   .subscribe(hero => {
     //     this.heroes.push(hero);
     //   });
-    this.globals.status = "Client."+code+"-Client."+client+" | " + this.movement + " | " + reference;
-    //this.status = this.globals.status;
-    this._sharedService.emitChange('data');
+    
   }
   cancel(): void{
     

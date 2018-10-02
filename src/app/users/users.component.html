@@ -14,11 +14,22 @@
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-      <form>
+      <form name="form" #f="ngForm" novalidate >
           <div class="form-group">
-            <label for="exampleInputEmail1">Client Info</label>
-            <input type="text" #code aria-describedby="emailHelp" placeholder="Enter Code" name="code">
-            <input type="text" #client aria-describedby="emailHelp" placeholder="Enter Client Name" name="client">  
+            <label>Client Info</label>
+            <input type="text" placeholder="Enter Code" class="invalid" name="code" [(ngModel)]="model.code" #code="ngModel" id="code" required maxlength="4" pattern="\d{4}">
+            <input type="text" [(ngModel)]="model.client" #client="ngModel" placeholder="Enter Client Name" name="client" id="client">
+            <div *ngIf="code.invalid" class="alert">
+                <div>
+                    Invaild Code! 4 digits only.
+                </div>    
+            </div>
+            <div *ngIf="!error == ''" class="alert">
+                
+                    <div>{{error}}</div>
+
+            </div>
+  
           </div>
           <div class="input-group-prepend">
               <label class="movement">Movement</label>
@@ -31,11 +42,11 @@
           </div>
           <div class="form-group">
               <label for="exampleInputEmail1">Reference</label>
-              <input type="date" #reference name='reference' id="reference">   
+              <input type="date" name="reference" id="reference" #reference [(ngModel)]="model.reference" #reference="ngModel" required>
           </div>
           <div class="row">
             <div class="col-sm-6">
-                <button type="button" class="btn btn-primary" (click)="ok(code.value, client.value, reference.value)">OK</button>
+                <button type="button" class="btn btn-primary" [attr.disabled]=" code.invalid || reference.value == ''  ? '' : null" (click)="ok()">OK</button>
                 <button type="button" class="btn btn-primary" (click)="cancel()">Cancel</button>
             </div>
             <div class="col-sm-3">
@@ -45,8 +56,5 @@
           </div>
       </form>
   </div>
-  <!-- <div class="col-md-3" id="status">
-      <span *ngIf="status">{{status}}</span>
-  </div> -->
-    
+
 </div>
