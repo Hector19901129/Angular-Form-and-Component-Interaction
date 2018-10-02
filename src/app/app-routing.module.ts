@@ -4,7 +4,8 @@ import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
 import { PostsComponent } from './posts/posts.component';
 import { LoginComponent } from './login/login.component';
-
+import { AttributeViewComponent } from './attribute-view/attribute-view.component';
+import { AttributeEditComponent } from './attribute-edit/attribute-edit.component';
 
 const routes: Routes = [
   {
@@ -12,12 +13,12 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'details/:id',
-    component: DetailsComponent
+    path: 'attributes/:id',
+    component: AttributeEditComponent
   },
   {
-    path: 'posts',
-    component: PostsComponent
+    path: 'attributes',
+    component: AttributeViewComponent
   },
 ];
 

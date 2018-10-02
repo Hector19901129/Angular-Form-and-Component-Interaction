@@ -42,5 +42,10 @@
         {"id": 2, "code": "0001", "name": "shin"},
         {"id": 3, "code": "0002", "name": "tazuka"},
         {"id": 4, "code": "0003", "name": "medusa"}
+      ],
+      "attributes" : [{"id": 1, "attribute": "attr1", "title": "title1", "visible": 0, "alignment": 1, "formula": "fdsafd", "kind_return": 1, "return": "224133"},
+        {"id": 2, "attribute": "attr2", "title": "title2", "visible": 0, "alignment": 1, "formula": "fdsafd", "kind_return": 1, "return": "224133"},
+        {"id": 3, "attribute": "attr3", "title": "title3", "visible": 0, "alignment": 0, "formula": "trewtrewt", "kind_return": 0, "return": "7335"},
+        {"id": 4, "attribute": "attr4", "title": "title4", "visible": 0, "alignment": 2, "formula": "fdsafdsfdff", "kind_return": 0, "return": "5423543265"}
       ]
   }

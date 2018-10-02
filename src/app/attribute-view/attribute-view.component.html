@@ -1,0 +1,32 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Atributo</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Visivel</th>
+      <th scope="col">Alinhamento</th>
+      <th scope="col">Formula</th>
+      <th scope="col">Tp Retono</th>
+      <th scope="col">Retono</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let attribute of attributes">
+      <th scope="row">
+        <a routerLink="/attribtues/{{attribute.id}}">Edit</a>
+        <a href="javascript:void(0);" (click)="del(attribute)">Del</a>
+      </th>
+      <td>{{attribute.attribute}}</td>
+      <td>{{attribute.title}}</td>
+      <td>{{attribute.visible}}</td>
+      <th>{{attribute.alignment}}</th>
+      <td>{{attribute.formula}}</td>
+      <td>{{attribute.kind_return}}</td>
+      <td>{{attribute.return}}</td>
+    </tr>
+    
+  </tbody>
+</table>
+
+<!-- <app-attribute-edit [attribute]="selectedAttribute"></app-attribute-edit> -->

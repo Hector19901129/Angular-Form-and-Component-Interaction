@@ -12,6 +12,8 @@ import { DetailsComponent } from './details/details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { Globals } from './model/globals';
+import { AttributeViewComponent } from './attribute-view/attribute-view.component';
+import { AttributeEditComponent } from './attribute-edit/attribute-edit.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { Globals } from './model/globals';
     PostsComponent,
     UsersComponent,
     DetailsComponent,
-    LoginComponent
+    LoginComponent,
+    AttributeViewComponent,
+    AttributeEditComponent
   ],
   imports: [
     BrowserModule,

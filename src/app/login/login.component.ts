@@ -38,9 +38,11 @@ export class LoginComponent implements OnInit {
     this.data.getClients()
     .subscribe(clients => this.clients = clients);
   }
+  
   radioChangeHandler(event: any){
     this.movement = event.target.value;
   }
+
   ok(): void {
     //reference = reference.trim(); 
     this.data.searchCode(this.model.code)
@@ -49,7 +51,7 @@ export class LoginComponent implements OnInit {
       this.validClient = client;
       if(this.size == 0){
         this.error = "Your Code is not valid. Retry!";
-        
+        this.model.client = "";
       }
       else{
         this.error = "";
