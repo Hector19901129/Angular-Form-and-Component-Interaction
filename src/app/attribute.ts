@@ -1,4 +1,5 @@
 export class Attribute {
+    id: number;
     attribute: string;
     title: string;
     visible: number;

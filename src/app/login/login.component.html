@@ -17,13 +17,13 @@
         <form name="form" #f="ngForm" novalidate >
             <div class="form-group">
               <label>Client Info</label>
-              <input type="text" placeholder="Enter Code" class="invalid" name="code" [(ngModel)]="model.code" #code="ngModel" id="code" required maxlength="4" pattern="\d{4}">
-              <input type="text" [(ngModel)]="model.client" #client="ngModel" placeholder="Enter Client Name" name="client" id="client">
-              <div *ngIf="code.invalid" class="alert">
+              <input type="text" placeholder="Enter Code" class="invalid" name="code" [(ngModel)]="model.code" #code="ngModel" id="code" required maxlength="4" pattern="\d{4}" (keyup)="onChangeCode($event.keycode)">
+              <input type="text" [(ngModel)]="model.client" #client="ngModel" placeholder="Enter Client Name" name="client" id="client" (keyup)="onChangeClient($event.keycode)">
+              <!-- <div *ngIf="code.invalid" class="alert">
                   <div>
                       Invaild Code! 4 digits only.
                   </div>    
-              </div>
+              </div> -->
               <div *ngIf="!error == ''" class="alert">
                   
                       <div>{{error}}</div>

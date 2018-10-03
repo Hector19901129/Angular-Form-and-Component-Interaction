@@ -1,13 +1,13 @@
 <form>
-        <h2>Edit Atributo</h2>
-    <div *ngIf="attribute" class="container balance">
+    <h2>Novo Atributo</h2>
+    <div class="container balance">
       <div class="row">
             <div class="col-md-2" ></div>
           <div class="col-md-2" >
               <label>Atributo</label>
             </div>
             <div class="col-md-4">
-              <input [(ngModel)]="attribute.attribute" type="text" class="form-control" name="attribute">
+              <input [(ngModel)]="model.attribute" #attribute="ngModel" type="text" class="form-control" name="attribute">
             </div>
             <div class="col-md-4">
                 
@@ -20,7 +20,7 @@
             
             </div>
             <div class="col-md-4">
-              <input type="checkbox" [checked]="attribute.visible" (change)="attribute.visible = !attribute.visible" name="visible">
+              <input type="checkbox" [checked]="model.visible" (change)="model.visible = !model.visible" name="visible">
               <label>Visivel</label>
             </div>
             <div class="col-md-4">
@@ -28,13 +28,13 @@
             </div>
       </div>
         
-      <div *ngIf="attribute.visible" class="row">
+      <div *ngIf="model.visible" class="row">
             <div class="col-md-2" ></div>
           <div class="col-md-2" >
               <label>Titulo</label>
           </div>
           <div class="col-md-4">
-              <input [(ngModel)]="attribute.title" type="text" class="form-control" name="title">
+              <input [(ngModel)]="model.title" type="text" class="form-control" name="title">
 
           </div>
           <div class="col-md-4">
@@ -42,19 +42,19 @@
           </div>
       </div>
         
-      <div *ngIf="attribute.visible" class="row">
+      <div *ngIf="model.visible" class="row">
             <div class="col-md-2" ></div>
           <div class="col-md-2" >
               <label>Alinhamento</label>
           </div>
           <div class="col-md-4">
-              <input type="radio" [checked]="attribute.alignment == 0" (change)="attribute.alignment = $event.target.value" name="alignment" value="0">
+              <input type="radio" [checked]="model.alignment == 0" (change)="model.alignment = $event.target.value" name="alignment" value="0">
               <label>a Esquerda</label><br>
 
-              <input type="radio" [checked]="attribute.alignment == 1" (change)="attribute.alignment = $event.target.value" name="alignment" value="1">
+              <input type="radio" [checked]="model.alignment == 1" (change)="model.alignment = $event.target.value" name="alignment" value="1">
               <label>a Esquerda</label><br>
 
-              <input type="radio" [checked]="attribute.alignment == 2" (change)="attribute.alignment = $event.target.value" name="alignment" value="2">
+              <input type="radio" [checked]="model.alignment == 2" (change)="model.alignment = $event.target.value" name="alignment" value="2">
               <label>a Esquerda</label><br>
           </div>
           <div class="col-md-4">
@@ -68,7 +68,7 @@
               <label>Formula</label>
           </div>
           <div class="col-md-4">
-              <input [(ngModel)]="attribute.formula" type="text" class="form-control" name="formula">
+              <input [(ngModel)]="model.formula" type="text" class="form-control" name="formula">
 
           </div>
           <div class="col-md-4">
@@ -82,10 +82,10 @@
               <label>Tipo de Retorno</label>
           </div>
           <div class="col-md-4">
-              <input type="radio" [checked]="attribute.kind_return == 0" (change)="attribute.kind_return = $event.target.value" name="kind_return" value="0">
+              <input type="radio" [checked]="model.kind_return == 0" (change)="model.kind_return = $event.target.value" name="kind_return" value="0">
               <label>Sim/Nao</label><br>
 
-              <input type="radio" [checked]="attribute.kind_return == 1" (change)="attribute.kind_return = $event.target.value" name="kind_return" value="1">
+              <input type="radio" [checked]="model.kind_return == 1" (change)="model.kind_return = $event.target.value" name="kind_return" value="1">
               <label>Texto</label><br>
 
           </div>
@@ -93,13 +93,13 @@
               
           </div>
       </div>
-      <div *ngIf="attribute.kind_return == 1" class="row">
+      <div *ngIf="model.kind_return == 1" class="row">
             <div class="col-md-2" ></div>
           <div class="col-md-2" >
               <label>Retorno</label>
           </div>
           <div class="col-md-4">
-              <input [(ngModel)]="attribute.return" type="text" class="form-control" name="return">
+              <input [(ngModel)]="model.return" type="text" class="form-control" name="return">
           </div>
           <div class="col-md-4">
               
@@ -108,7 +108,7 @@
       <div class="row">
             <div class="col-md-4" ></div>
             <div class="col-md-8">
-                <button (click)="save()" class="btn btn-primary">OK</button>
+                <button (click)="add()" class="btn btn-primary">OK</button>
                 <button (click)="goBack()" class="btn btn-primary">Cancel</button>
             </div>
       </div>

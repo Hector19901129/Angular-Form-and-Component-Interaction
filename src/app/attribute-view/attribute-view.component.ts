@@ -11,7 +11,7 @@ export class AttributeViewComponent implements OnInit {
 
   selectedAttribute: Attribute;
   attributes: Attribute[];
-  
+
   constructor(private data: DataService) { }
   
   ngOnInit() {
@@ -22,10 +22,17 @@ export class AttributeViewComponent implements OnInit {
     this.selectedAttribute = attribute;
   }
 
+  del(attribute: Attribute): void{
+    this.attributes = this.attributes.filter( attr => attr !== attribute);
+    this.data.deleteAttribute(attribute).subscribe();
+
+  }
+
   getAttributes(): void{
     this.data.getAttributes()
     .subscribe(attributes => this.attributes = attributes);
   }
 
+  
 
 }

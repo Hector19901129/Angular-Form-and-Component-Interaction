@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { Globals } from './model/globals';
 import { AttributeViewComponent } from './attribute-view/attribute-view.component';
 import { AttributeEditComponent } from './attribute-edit/attribute-edit.component';
+import { AttributeAddComponent } from './attribute-add/attribute-add.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AttributeEditComponent } from './attribute-edit/attribute-edit.componen
     DetailsComponent,
     LoginComponent,
     AttributeViewComponent,
-    AttributeEditComponent
+    AttributeEditComponent,
+    AttributeAddComponent
   ],
   imports: [
     BrowserModule,
