@@ -16,6 +16,12 @@ import { AttributeViewComponent } from './attribute-view/attribute-view.componen
 import { AttributeEditComponent } from './attribute-edit/attribute-edit.component';
 import { AttributeAddComponent } from './attribute-add/attribute-add.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { TreeModule } from 'angular-tree-component';
+import { WizardComponent } from './wizard/wizard.component';
+import { IntegralUIModule } from '../../integralui/integralui.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,13 +32,24 @@ import { AttributeAddComponent } from './attribute-add/attribute-add.component';
     LoginComponent,
     AttributeViewComponent,
     AttributeEditComponent,
-    AttributeAddComponent
+    AttributeAddComponent,
+    WizardComponent,
+    
   ],
   imports: [
+    MatButtonModule,
+    MatCheckboxModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    TreeModule.forRoot(),
+    IntegralUIModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatCheckboxModule
   ],
   providers: [ Globals ],
   bootstrap: [AppComponent]

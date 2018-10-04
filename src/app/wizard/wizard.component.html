@@ -1,0 +1,34 @@
+<div class="container" class="balance">
+    <tree-root [nodes]="nodes" [options]="options" class="balance"></tree-root>
+</div>
+
+<iui-treeview [items]="data" [controlStyle]="treeStyle" [virtualMode]="true" #treeview>
+    <ng-template let-item>
+        <div (mousedown)="itemClicked($event, item)">
+            <span [ngClass]="getItemIcon(item)"></span>
+            <span class="trw-combo-item-label">{{item.text}}</span>
+            <span *ngIf="item!=activeItem" [ngSwitch]="item.id">
+                <span *ngSwitchCase="12">
+                    <span class="trw-combo-item-value">
+                        {{item.value}} 
+                        <span *ngIf="item.value == 1">Copy</span>
+                        <span *ngIf="item.value > 1">Copies</span>
+                    </span>
+                </span>
+                <span *ngSwitchDefault>
+                    <span class="trw-combo-item-value" >{{item.value}}</span>
+                </span>
+            </span>
+            <span *ngIf="item==activeItem" [ngSwitch]="item.id">
+                <span *ngSwitchCase="12">
+                    <iui-numeric-updown [controlStyle]="numUpDownStyle" [(ngModel)]="item.value"></iui-numeric-updown>
+                </span>
+                <span *ngSwitchDefault>
+                    <iui-combobox [items]="item.combo" [controlStyle]="comboStyle" [size]="{ width: item.comboWidth }" [maxDropDownItems]="5" [integralHeight]="true" [selectedItem]="getComboSelection(item)" (selectedItemChanged)="onComboSelectionChanged($event, item)" (dropDownClosed)="onComboClosed($event)">
+                        <iui-item *ngFor="let item of item.combo" [text]="item.text"></iui-item>
+                    </iui-combobox>
+                </span>
+            </span>
+        </div>
+    </ng-template>
+</iui-treeview>

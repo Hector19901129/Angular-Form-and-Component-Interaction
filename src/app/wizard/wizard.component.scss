@@ -1,0 +1,82 @@
+.balance{
+    padding:30px 100px;
+}
+
+.trw-combo-normal
+{
+    float: left;
+    width: 450px;
+    height: 400px;
+}
+.trw-combo-normal .iui-treeitem-expand-box
+{
+    margin-top: 4px !important;
+}
+.trw-combo-item-label
+{
+    display: inline-block;
+    padding: 3px 0;
+    vertical-align: top;
+}
+.trw-combo-item-value
+{
+    text-decoration: underline;
+}
+.trw-combo-cmb
+{
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+}
+.trw-combo-cmb-header, .trw-combo-cmb-header-hovered
+{
+    border: thin solid #cecece;
+    padding: 0;
+}
+.trw-combo-cmb-header .iui-header-expand-box-arrow
+{
+    margin: 2px;
+}
+.trw-combo-icons-medium
+{
+    background-image: url(../../../integralui/resources/icons-x24.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 1px 0 0;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+.trw-combo-icon-empty
+{
+    display: inline-block;
+    padding: 0 !important;
+    height: 24px;
+    vertical-align: middle;
+}
+.trw-combo-icon-paper
+{
+    background-position: -24px -48px;
+}
+.trw-combo-icon-graphics
+{
+    background-position: -24px -72px;
+}
+.trw-combo-icon-tools
+{
+    background-position: -96px -24px;
+}
+.trw-combo-icon-features
+{
+    background-position: -96px -196px;
+}
+.trw-combo-num
+{
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+    width: 50px;
+}

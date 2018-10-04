@@ -26,11 +26,22 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "integralui/resources",
+                "output": "/assets"
               }
             ],
             "styles": [
             {
               "input": "src/styles.scss"
+            },
+            {
+              "input": "integralui/css/integralui.module.css"
+            },
+            {
+              "input": "integralui/css/integralui.themes.blue.css"
             }
           ],
           "scripts": [{
@@ -99,7 +110,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "src/assets",
+                "input": "integralui/resources",
                 "output": "/assets"
               }
             ]

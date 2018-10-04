@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AttributeViewComponent } from './attribute-view/attribute-view.component';
 import { AttributeEditComponent } from './attribute-edit/attribute-edit.component';
 import { AttributeAddComponent } from './attribute-add/attribute-add.component';
+import { WizardComponent } from './wizard/wizard.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'attributes',
     component: AttributeViewComponent
+  },
+  {
+    path: 'attributewizard',
+    component: WizardComponent
   },
 ];
 

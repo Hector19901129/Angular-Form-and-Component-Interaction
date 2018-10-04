@@ -65,17 +65,22 @@
     {
       "attribute": "base de calculo do cis",
       "formula": "sdfsdf",
-      "kind_return": "0",
+      "kind_return": "1",
       "visible": true,
       "title": "BASE",
       "alignment": "0",
-      "id": 5
+      "id": 5,
+      "return": "12345515"
     },
     {
       "visible": true,
-      "kind_return": "1",
+      "attribute": "attr3",
       "alignment": "0",
-      "id": 6
+      "title": "f",
+      "formula": "trewtrewt",
+      "kind_return": "1",
+      "return": "12134",
+      "id": 7
     }
   ]
 }

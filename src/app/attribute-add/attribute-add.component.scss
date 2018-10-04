@@ -9,6 +9,14 @@
         width: 80px;
     }
 }
-form h2{
-    text-align: center;
+form{
+    h2{
+        text-align: center;
+    }
+    a{
+        margin-left:30px;
+        border: 1px solid gray;
+        padding:5px;
+        border-radius: 10px;
+    }
 }
