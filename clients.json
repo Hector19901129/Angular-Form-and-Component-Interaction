@@ -63,34 +63,19 @@
   ],
   "attributes": [
     {
-      "id": 1,
-      "attribute": "attr1fdsfds",
-      "title": "title1",
+      "attribute": "base de calculo do cis",
+      "formula": "sdfsdf",
+      "kind_return": "0",
       "visible": true,
-      "alignment": 1,
-      "formula": "fdsafd",
-      "kind_return": 1,
-      "return": "224133"
+      "title": "BASE",
+      "alignment": "0",
+      "id": 5
     },
     {
-      "id": 2,
-      "attribute": "attr2",
-      "title": "title2",
-      "visible": false,
-      "alignment": 1,
-      "formula": "fdsafd",
-      "kind_return": 1,
-      "return": "224133"
-    },
-    {
-      "id": 4,
-      "attribute": "attr4",
-      "title": "title4",
-      "visible": 0,
-      "alignment": 2,
-      "formula": "fdsafdsfdff",
-      "kind_return": 0,
-      "return": "5423543265"
+      "visible": true,
+      "kind_return": "1",
+      "alignment": "0",
+      "id": 6
     }
   ]
 }
